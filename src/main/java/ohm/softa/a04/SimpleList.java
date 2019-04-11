@@ -29,7 +29,10 @@ public interface SimpleList<T> extends Iterable<T> {
 
 	default <R> SimpleList<R> map(Function<T, R> transform) {
 		SimpleList<R> result = new SimpleListImpl<>();
-
-		return null;
+		for(T t : this) {
+			R r = transform.apply(t);
+			result.add(r);
+		}
+		return result;
 	}
 }
