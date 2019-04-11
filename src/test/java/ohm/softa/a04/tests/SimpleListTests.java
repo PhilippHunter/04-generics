@@ -75,6 +75,14 @@ public class SimpleListTests {
   @Test
   void testMap() {
     logger.info("Testing the default map function by converting all elements to strings");
-    //TODO
+
+    SimpleList<Integer> mapped = testList.map((i) -> i+1);
+
+    assertEquals(5, mapped.size());
+
+    for(Integer i : mapped) {
+      assertTrue(i > 1);
+      assertTrue(i < 7);
+    }
   }
 }
